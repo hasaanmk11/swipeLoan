@@ -1,3 +1,4 @@
+import 'package:app/features/core/colors/app_colors.dart';
 import 'package:app/features/presentation/widgets/nav_item.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,7 @@ class BottomNav extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               navItem(
                 Path: "assets/crad_icon.png",
@@ -45,7 +46,7 @@ class BottomNav extends StatelessWidget {
                 isActive: false,
               ),
               navItem(
-                Path: "assets/crad_icon.png",
+                Path: "assets/other_loan.png",
                 label: "Other Loan",
                 isActive: true,
               ),
@@ -69,7 +70,7 @@ class BottomNav extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xff16C172).withOpacity(0.4),
+                      color: appBorderBgClr.withOpacity(0.4),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),

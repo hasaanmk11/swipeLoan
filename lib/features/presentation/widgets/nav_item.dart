@@ -1,3 +1,4 @@
+import 'package:app/features/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 Widget navItem({
@@ -5,12 +6,12 @@ Widget navItem({
   required String label,
   required bool isActive,
 }) {
-  final color = isActive ? const Color(0xff16C172) : Colors.black87;
+  final color = isActive ? appBorderBgClr : Colors.black87;
   return Column(
     mainAxisSize: MainAxisSize.min,
     children: [
-      Image.asset(Path),
-      const SizedBox(height: 4),
+      SizedBox(width: 30, height: 30, child: Image.asset(Path)),
+
       Text(
         label,
         style: TextStyle(
