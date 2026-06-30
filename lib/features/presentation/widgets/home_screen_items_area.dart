@@ -456,123 +456,132 @@ class HomeScreenItemsParts extends StatelessWidget {
           LoanEligibleScrolableCrad(),
           SizedBox(height: 20),
           LoanOptionForYouCrad(),
-          SizedBox(height: 20,),
+          SizedBox(height: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    "Track Your Spends",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff262626),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: const Text(
+                      "Track Your Spends",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff262626),
+                      ),
                     ),
                   ),
-                  Row(
-                    children: const [
-                      Icon(
-                        Icons.calendar_today,
-                        size: 14,
-                        color: Colors.black54,
-                      ),
-                      SizedBox(width: 6),
-                      Text(
-                        "05 May",
-                        style: TextStyle(fontSize: 13, color: Colors.black54),
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: const [
+                        Icon(
+                          Icons.calendar_today,
+                          size: 14,
+                          color: Colors.black54,
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          "05 May",
+                          style: TextStyle(fontSize: 13, color: Colors.black54),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
               const SizedBox(height: 14),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xff1A8C5A), Color(0xff6FD18B)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xff1A8C5A), Color(0xff6FD18B)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  children: [
-                    RichText(
-                      textAlign: TextAlign.center,
-                      text: const TextSpan(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: "Your Daily Spending Report Is\nReady For ",
+                  child: Column(
+                    children: [
+                      RichText(
+                        textAlign: TextAlign.center,
+                        text: const TextSpan(
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
                           ),
-                          TextSpan(
-                            text: "5th May",
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              decorationColor: Colors.amber,
-                              decorationThickness: 2,
-                              color: Colors.white,
+                          children: [
+                            TextSpan(
+                              text: "Your Daily Spending Report Is\nReady For ",
+                            ),
+                            TextSpan(
+                              text: "5th May",
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                decorationColor: Colors.amber,
+                                decorationThickness: 2,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 18),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: _spendCard(
+                              label: "Debit",
+                              labelColor: const Color(0xffE5484D),
+                              icon: Icons.arrow_downward,
+                              amount: "₹40,000",
+                              imageAsset: "assets/red_money_bag.png",
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: _spendCard(
+                              label: "Credit",
+                              labelColor: const Color(0xff16C172),
+                              icon: Icons.arrow_upward,
+                              amount: "₹1,150,496",
+                              imageAsset: "assets/green_money_bag.png",
                             ),
                           ),
                         ],
                       ),
-                    ),
-                    const SizedBox(height: 18),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: _spendCard(
-                            label: "Debit",
-                            labelColor: const Color(0xffE5484D),
-                            icon: Icons.arrow_downward,
-                            amount: "₹40,000",
-                            imageAsset: "assets/debit_card_icon.png",
-                          ),
+                      const SizedBox(height: 14),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(14),
                         ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: _spendCard(
-                            label: "Credit",
-                            labelColor: const Color(0xff16C172),
-                            icon: Icons.arrow_upward,
-                            amount: "₹1,150,496",
-                            imageAsset: "assets/credit_card_icon.png",
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 14),
-                    Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "View Full Report",
-                          style: TextStyle(
-                            color: Color(0xff16C172),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                        child: const Center(
+                          child: Text(
+                            "View Full Report",
+                            style: TextStyle(
+                              color: Color(0xff16C172),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -580,9 +589,7 @@ class HomeScreenItemsParts extends StatelessWidget {
 }
 
 class LoanOptionForYouCrad extends StatelessWidget {
-  const LoanOptionForYouCrad({
-    super.key,
-  });
+  const LoanOptionForYouCrad({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -614,7 +621,7 @@ class LoanOptionForYouCrad extends StatelessWidget {
               ),
             ),
           ),
-    
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -643,11 +650,7 @@ class LoanOptionForYouCrad extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 4),
-                        Icon(
-                          Icons.bolt,
-                          color: Color(0xff16C172),
-                          size: 18,
-                        ),
+                        Icon(Icons.bolt, color: Color(0xff16C172), size: 18),
                       ],
                     ),
                     const SizedBox(height: 14),
@@ -689,7 +692,7 @@ class LoanOptionForYouCrad extends StatelessWidget {
                   ],
                 ),
               ),
-    
+
               // Right illustration
               Expanded(
                 flex: 2,
