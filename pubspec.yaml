@@ -68,6 +68,10 @@ flutter:
     - assets/calculator.png
     - assets/icdicator.png
     - assets/wommen.png
+    - assets/loan_icon.png
+    - assets/crad_icon.png
+    - assets/map_icon.png
+    - assets/other_loan.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
