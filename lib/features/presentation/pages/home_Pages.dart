@@ -1,3 +1,6 @@
+import 'package:app/features/presentation/widgets/home_screen_items_area.dart';
+import 'package:app/features/presentation/widgets/top_image.dart';
+import 'package:app/features/presentation/widgets/user_profile_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,46 +12,20 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xffF4F4F4),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Stack(
-            clipBehavior: Clip.none,
+          child: Column(
             children: [
-              // Top Image
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(25),
-                  bottomRight: Radius.circular(25),
-                ),
-                child: Image.asset(
-                  "assets/top_image.jpg",
-                  width: double.infinity,
-                  height: 300,
-                  fit: BoxFit.cover,
-                ),
-              ),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  // Background Image
+                  TopImage(),
 
-              // White Container
-              Positioned(
-                top: 300, // Move up/down to adjust overlap
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 600,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(20),
-                    ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Your Content Here",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+                  // Greeting
+                  UserPrifieAppBar(),
+
+                  // White Card
+                  HomeScreenItemsParts(),
+                ],
               ),
             ],
           ),
@@ -57,3 +34,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+

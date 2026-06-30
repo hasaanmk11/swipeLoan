@@ -1,0 +1,264 @@
+import 'package:flutter/material.dart';
+
+class HomeScreenItemsParts extends StatelessWidget {
+  const HomeScreenItemsParts({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 300,
+      left: 0,
+      right: 0,
+      child: Container(
+        width: double.infinity,
+        height: 650,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(28),
+            topRight: Radius.circular(28),
+          ),
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Column(
+                children: [
+                  // Active Badge
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xffE7F9ED),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.check_circle,
+                          color: Color(0xff25B869),
+                          size: 16,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          "Score Improvement Plan Active",
+                          style: TextStyle(
+                            color: Color(0xff2D2D2D),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 30),
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Circular Score
+                      SizedBox(
+                        width: 150,
+                        height: 150,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            SizedBox(
+                              width: 130,
+                              height: 130,
+                              child: CircularProgressIndicator(
+                                value: 0,
+                                strokeWidth: 12,
+                                color: Colors.green,
+                                backgroundColor: Color(0xffEFEFEF),
+                              ),
+                            ),
+                            const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "-1",
+                                  style: TextStyle(
+                                    fontSize: 44,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xff0A1033),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  "Last Updated",
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 11,
+                                  ),
+                                ),
+                                SizedBox(height: 2),
+                                Text(
+                                  "12 May 2026",
+                                  style: TextStyle(
+                                    color: Color(0xff5E77A4),
+                                    fontSize: 11,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      const SizedBox(width: 18),
+
+                      // Right Side
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Score Improvement Plan",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff313131),
+                              ),
+                            ),
+
+                            const SizedBox(height: 18),
+
+                            RichText(
+                              text: const TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "0%",
+                                    style: TextStyle(
+                                      color: Color(0xff16C172),
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: " Completed",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            const SizedBox(height: 10),
+
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: const LinearProgressIndicator(
+                                value: 0,
+                                minHeight: 6,
+                                backgroundColor: Color(0xffDDDDDD),
+                                color: Color(0xff16C172),
+                              ),
+                            ),
+
+                            const SizedBox(height: 10),
+
+                            const Text(
+                              "May 2025",
+                              style: TextStyle(color: Colors.grey),
+                            ),
+
+                            const SizedBox(height: 18),
+
+                            SizedBox(
+                              width: double.infinity,
+                              height: 55,
+                              child: OutlinedButton(
+                                style: OutlinedButton.styleFrom(
+                                  side: const BorderSide(
+                                    color: Color(0xff16C172),
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Refresh my Score",
+                                      style: TextStyle(
+                                        color: Color(0xff16C172),
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Color(0xff16C172),
+                                      size: 18,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 35),
+
+                  const Text(
+                    "Your Credit Score Is -1",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff262626),
+                    ),
+                  ),
+
+                  const SizedBox(height: 6),
+
+                  const Text(
+                    "You Have Not Taken Any Loan Till Now.",
+                    style: TextStyle(fontSize: 18, color: Color(0xff313131)),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 28,
+                        height: 6,
+                        decoration: BoxDecoration(
+                          color: Color(0xff16C172),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      Container(
+                        width: 8,
+                        height: 8,
+                        decoration: const BoxDecoration(
+                          color: Color(0xffD8D8D8),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
