@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/top_image.jpg
     - assets/Mask_group.png
+    - assets/git_icons.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

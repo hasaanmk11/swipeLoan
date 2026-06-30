@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF4F4F4),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -18,15 +18,25 @@ class HomePage extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   // Background Image
-                  TopImage(),
+                  const TopImage(),
 
-                  // Greeting
-                  UserPrifieAppBar(),
-
-                  // White Card
-                  HomeScreenItemsParts(),
+                  // Greeting overlaid on the image
+                  const Positioned(
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    child: UserPrifieAppBar(),
+                  ),
                 ],
               ),
+
+              // Pull the white card up so it overlaps the bottom of the image
+              Transform.translate(
+                offset: const Offset(0, -50),
+                child: const HomeScreenItemsParts(),
+              ),
+
+              const SizedBox(height: 20),
             ],
           ),
         ),
@@ -34,4 +44,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
