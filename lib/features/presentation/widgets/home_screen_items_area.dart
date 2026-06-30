@@ -454,6 +454,255 @@ class HomeScreenItemsParts extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           LoanEligibleScrolableCrad(),
+          SizedBox(height: 20),
+          LoanOptionForYouCrad(),
+          SizedBox(height: 20,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Track Your Spends",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff262626),
+                    ),
+                  ),
+                  Row(
+                    children: const [
+                      Icon(
+                        Icons.calendar_today,
+                        size: 14,
+                        color: Colors.black54,
+                      ),
+                      SizedBox(width: 6),
+                      Text(
+                        "05 May",
+                        style: TextStyle(fontSize: 13, color: Colors.black54),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 14),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xff1A8C5A), Color(0xff6FD18B)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    RichText(
+                      textAlign: TextAlign.center,
+                      text: const TextSpan(
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: "Your Daily Spending Report Is\nReady For ",
+                          ),
+                          TextSpan(
+                            text: "5th May",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              decorationColor: Colors.amber,
+                              decorationThickness: 2,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 18),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _spendCard(
+                            label: "Debit",
+                            labelColor: const Color(0xffE5484D),
+                            icon: Icons.arrow_downward,
+                            amount: "₹40,000",
+                            imageAsset: "assets/debit_card_icon.png",
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: _spendCard(
+                            label: "Credit",
+                            labelColor: const Color(0xff16C172),
+                            icon: Icons.arrow_upward,
+                            amount: "₹1,150,496",
+                            imageAsset: "assets/credit_card_icon.png",
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 14),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "View Full Report",
+                          style: TextStyle(
+                            color: Color(0xff16C172),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class LoanOptionForYouCrad extends StatelessWidget {
+  const LoanOptionForYouCrad({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xffF3FBF6), Color(0xffE7F9ED)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: const Color(0xffD7F2E2)),
+      ),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          // Decorative dots
+          Positioned(
+            top: 0,
+            right: 60,
+            child: Container(
+              width: 10,
+              height: 10,
+              decoration: const BoxDecoration(
+                color: Color(0xffB9E4FF),
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+    
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Left text content
+              SizedBox(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Loan Option For You",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff262626),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: const [
+                        Text(
+                          "Uto 1 Lakhs",
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff16C172),
+                          ),
+                        ),
+                        SizedBox(width: 4),
+                        Icon(
+                          Icons.bolt,
+                          color: Color(0xff16C172),
+                          size: 18,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 14),
+                    _bulletPoint("Hassle free process"),
+                    const SizedBox(height: 4),
+                    _bulletPoint("instant transfer"),
+                    const SizedBox(height: 18),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 18,
+                        vertical: 12,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF7FBF8E), Color(0xFF2E9E6B)],
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Apply Now",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 13,
+                            ),
+                          ),
+                          SizedBox(width: 4),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+    
+              // Right illustration
+              Expanded(
+                flex: 2,
+                child: SizedBox(
+                  height: 220,
+                  child: Image.asset(
+                    "assets/bootm_image_coins.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -571,4 +820,82 @@ class LoanEligibleScrolableCrad extends StatelessWidget {
       ],
     );
   }
+}
+
+Widget _bulletPoint(String text) {
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(top: 6),
+        child: Icon(Icons.circle, size: 4, color: Colors.black87),
+      ),
+      const SizedBox(width: 8),
+      Text(
+        text,
+        style: const TextStyle(fontSize: 13, color: Color(0xff333333)),
+      ),
+    ],
+  );
+}
+
+Widget _spendCard({
+  required String label,
+  required Color labelColor,
+  required IconData icon,
+  required String amount,
+  required String imageAsset,
+}) {
+  return Container(
+    padding: const EdgeInsets.all(12),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(14),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+          decoration: BoxDecoration(
+            color: labelColor,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                label,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(width: 3),
+              Icon(icon, color: Colors.white, size: 11),
+            ],
+          ),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            Image.asset(imageAsset, width: 26, height: 26),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                amount,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  color: Color(0xff262626),
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
 }
