@@ -1,6 +1,7 @@
 import 'package:app/features/presentation/widgets/bottom_nav.dart';
 import 'package:app/features/presentation/widgets/home_screen_items_area.dart';
-import 'package:app/features/presentation/widgets/nav_item.dart';
+import 'package:app/features/presentation/widgets/graph_card.dart';
+
 import 'package:app/features/presentation/widgets/top_image.dart';
 import 'package:app/features/presentation/widgets/user_profile_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   // Background Image
                   const TopImage(),
+                 
 
                   // Greeting overlaid on the image
                   const Positioned(
@@ -47,6 +49,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
-
